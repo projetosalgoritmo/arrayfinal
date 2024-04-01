@@ -1,0 +1,106 @@
+/* Estilo global */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+/* Estilo do mapa */
+.mapa {
+    flex: 1; /* Ocupa todo o espaço disponível */
+    height: 100vh; /* Altura total da tela */
+    background-color: #ddd; /* Cor de fundo para simular o mapa */
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+}
+
+/* Estilo dos blocos no mapa */
+.bloco {
+    width: 100%;
+    height: 100%;
+    background-image: url("./rua.png");
+    background-size: cover; 
+    box-sizing: border-box;
+}
+
+/* Estilo dos blocos que representam cidades */
+.cidade-selecionada {
+    background-image: url("./predio.png");
+    background-size: cover;
+}
+.cidade-percorrida {
+    background-color: #07ec1a; 
+}
+
+.carrinho {
+    width: 120px;
+    height: 120px;
+    background-image: url("./car.png"); 
+    background-size: cover;
+    position: absolute;
+    transition: left 0.5s, top 0.5s;
+}
+
+
+/* Estilo da barra lateral */
+.sidebar {
+    width: 400px; /* Largura da barra lateral */
+    height: 100%; /* Altura da barra lateral */
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+}
+
+/* Estilo dos controles na barra lateral */
+.controles {
+    margin-top: 20px;
+}
+
+.controles label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.controles input {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.controles button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.caminho-percorrido {
+    background-color: green;
+}
+
+.controles button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo da informação das distâncias */
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 0px;
+    font-size: 0.9em;
+}
+
+.info h3 {
+    margin-bottom: 10px;
+}
