@@ -28,15 +28,19 @@ body, html {
     background-image: url("./rua.png");
     background-size: cover; 
     box-sizing: border-box;
-}
+    }
 
 /* Estilo dos blocos que representam cidades */
 .cidade-selecionada {
     background-image: url("./predio.png");
+    background-color: pink;
     background-size: cover;
 }
 .cidade-percorrida {
     background-color: #07ec1a; 
+}
+.rota {
+    background-color: red; 
 }
 
 .carrinho {

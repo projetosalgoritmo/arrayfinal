@@ -16,27 +16,35 @@ for (let i = 0; i < 8; i++) {
 }
 
 // Função para adicionar uma cidade ao mapa
-function adicionarCidade(letra) {
-    const coluna = Math.floor(Math.random() * 8); // Gera um número aleatório entre 0 e 7 para a coluna
-    const linha = Math.floor(Math.random() * 8); // Gera um número aleatório entre 0 e 7 para a linha
-
+function adicionarCidade(letra, coluna, linha) {
     const bloco = document.querySelector(`.bloco[data-coluna="${coluna}"][data-linha="${linha}"]`);
     bloco.innerText = letra;
     bloco.classList.add('cidade-selecionada');
 
     cidades[letra] = { posicao: { coluna, linha }, letra };
-    console.log(cidades["A"].posicao)
     // Calcular e exibir as distâncias entre as cidades
     calcularDistanciasEntreCidades();
 }
 
-// Gerar 5 cidades aleatórias ao carregar o projeto
+// Array estático de posições para as cidades
+const posicoesCidades = [
+    { coluna: 1, linha: 3 },
+    { coluna: 6, linha: 7 },
+    { coluna: 5, linha: 5 },
+    { coluna: 3, linha: 3 },
+    { coluna: 6, linha: 1 }
+];
+
+// Gerar 5 cidades com posições estáticas ao carregar o projeto
 window.onload = function () {
+    const letras = ['A', 'B', 'C', 'D', 'E'];
     for (let i = 0; i < 5; i++) {
-        let letra = String.fromCharCode(65 + i); // Gera a próxima letra do alfabeto
-        adicionarCidade(letra);
+        const letra = letras[i];
+        const { coluna, linha } = posicoesCidades[i];
+        adicionarCidade(letra, coluna, linha);
     }
 };
+
 
 // Função para obter a próxima letra disponível para uma cidade
 function obterProximaLetra() {
@@ -63,6 +71,7 @@ function calcularDistanciasEntreCidades() {
     }
     exibirDistancias();
 }
+
 
 // Função para calcular a distância entre duas posições
 function calcularDistanciaEntrePosicoes(posicaoA, posicaoB) {
@@ -118,7 +127,8 @@ function calcularRotaMaisProximo(origem, destino) {
                 }
             }
         }
-
+        pintarRota(cidadeAtual,cidadeMaisProxima);
+       
         Rota.push(cidadeMaisProxima);
         cidadeAtual = cidadeMaisProxima;
         // Alterar a cor do bloco no mapa
@@ -127,6 +137,82 @@ function calcularRotaMaisProximo(origem, destino) {
     }
 
     return Rota;
+}
+function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma cidade a outra
+    
+    // linha e coluna de ambas as cidades 
+    let pac = cidades[a].posicao.linha //coluna cidade 
+    let pal = cidades[a].posicao.coluna //linha cidade atual
+    let ppc = cidades[p].posicao.linha //coluna cidade mais proxima
+    let ppl = cidades[p].posicao.coluna //linha cidade mais proxima
+    console.log("coluna atual:",pac)
+    console.log("linha atual:",pal)
+    console.log("coluna proxima:",ppc)
+    console.log("linha proxima:",ppl)
+
+    let qpvertical = Math.abs(pal - ppl); 
+    let qphorizontal = Math.abs(pac - ppc); 
+    if(pal>ppl){ //PINTAR PARA CIMA
+        let sub =1
+        while(qpvertical>0,qpvertical--){ //pintando para cima 
+            console.log("PINTANDO PRA CIMA")
+
+            const bloco = document.querySelector(`.bloco[data-coluna="${(pal =pal-1)}"][data-linha="${pac}"]`);
+            bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+        }
+        if(pac>ppc){// PINTAR PARA ESQUERDA
+            console.log("PINTANDO PRA ESQUERDA")
+            while(qphorizontal>0,qphorizontal--){ //pintando para esquerda
+                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac-1)}"]`);
+                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+
+            }
+        }else if(pac<ppc){ //PINTAR PARA DIREITA
+            console.log("PINTANDO PRA DIREITA")
+            while(qphorizontal>0,qphorizontal--){ //pintando para cima 
+                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac+1)}"]`);
+                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+            }
+        }
+
+    }else if(pal<ppl){ //PINTAR PARA BAIXO
+
+        while(qpvertical>0,qpvertical--){ 
+            console.log("PINTANDO PRA BAIXO")
+            
+            const bloco = document.querySelector(`.bloco[data-coluna="${(pal = pal+1)}"][data-linha="${pac}"]`);
+            bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+        }
+        if(pac>ppc){// PINTAR PARA 
+            while(qphorizontal>0,qphorizontal--){ 
+                console.log("PINTANDO PRA ESQUERDA")
+                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
+                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                        }
+        }else if(pac<ppc){ //PINTAR PARA DIREITA
+                while(qphorizontal>0,qphorizontal--){ 
+                console.log("PINTANDO PRA DIREITA")
+                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
+                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                }
+        }
+    }else{
+        
+        if(pac>ppc){// PINTAR PARA 
+            while(qphorizontal>0,qphorizontal--){ 
+                console.log("PINTANDO PRA ESQUERDA")
+                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
+                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                        }
+        }else if(pac<ppc){ //PINTAR PARA DIREITA
+                while(qphorizontal>0,qphorizontal--){ 
+                console.log("PINTANDO PRA DIREITA")
+                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
+                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                }
+
+    }
+}
 }
 
 function limparCores() {
