@@ -158,20 +158,20 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
             console.log("PINTANDO PRA CIMA")
 
             const bloco = document.querySelector(`.bloco[data-coluna="${(pal =pal-1)}"][data-linha="${pac}"]`);
-            bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+            bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
         }
         if(pac>ppc){// PINTAR PARA ESQUERDA
             console.log("PINTANDO PRA ESQUERDA")
             while(qphorizontal>0,qphorizontal--){ //pintando para esquerda
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac-1)}"]`);
-                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
 
             }
         }else if(pac<ppc){ //PINTAR PARA DIREITA
             console.log("PINTANDO PRA DIREITA")
             while(qphorizontal>0,qphorizontal--){ //pintando para cima 
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac+1)}"]`);
-                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
             }
         }
 
@@ -181,19 +181,19 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
             console.log("PINTANDO PRA BAIXO")
             
             const bloco = document.querySelector(`.bloco[data-coluna="${(pal = pal+1)}"][data-linha="${pac}"]`);
-            bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+            bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
         }
         if(pac>ppc){// PINTAR PARA 
             while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA ESQUERDA")
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
-                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
                         }
         }else if(pac<ppc){ //PINTAR PARA DIREITA
                 while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA DIREITA")
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
-                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
                 }
         }
     }else{
@@ -202,13 +202,13 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
             while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA ESQUERDA")
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
-                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
                         }
         }else if(pac<ppc){ //PINTAR PARA DIREITA
                 while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA DIREITA")
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
-                bloco.style.backgroundColor = "red"; // Define a cor de fundo como azul
+                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
                 }
 
     }
