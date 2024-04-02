@@ -352,10 +352,6 @@ document.getElementById('cidadeOrigemInput').addEventListener('input', function 
         const carrinho = document.getElementById('carrinho'); // Obtendo o elemento do carro
         console.log("Largura:", mapaDiv.offsetWidth, "Altura:", mapaDiv.offsetHeight);
         console.log(mapaDiv)
-       
-        // id="bloco07" de cada bloco  --> posicaoOrigem {coluna: 7, linha: 1}
-
-        //console.log('bloco'+'_'+posicaoOrigem.coluna+'_'+posicaoOrigem.linha)
 
         var originalDiv = document.getElementById('bloco'+'_'+posicaoOrigem.coluna+'_'+posicaoOrigem.linha);
         var overlayDiv = document.getElementById('carrinho');
