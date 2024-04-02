@@ -157,11 +157,11 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
         while(qpvertical>0,qpvertical--){ //pintando para cima 
             console.log("PINTANDO PRA CIMA")
 
-            const bloco = document.querySelector(`.bloco[data-coluna="${(pal =pal-1)}"][data-linha="${pac}"]`);
+            var bloco = document.querySelector(`.bloco[data-coluna="${(pal =pal-1)}"][data-linha="${pac}"]`);
             
             bloco.style.backgroundImage = "url('fim.png')";
 
-            const blocoId = bloco.getAttribute('id');
+            var blocoId = bloco.getAttribute('id');
             console.log('id do bloco: '+blocoId)
 
             var posicaoBloco = document.getElementById(blocoId);
@@ -176,11 +176,11 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
         if(pac>ppc){// PINTAR PARA ESQUERDA
             console.log("PINTANDO PRA ESQUERDA")
             while(qphorizontal>0,qphorizontal--){ //pintando para esquerda
-                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac-1)}"]`);
+                var bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac-1)}"]`);
                
                 bloco.style.backgroundImage = "url('fim.png')";
 
-                const blocoId = bloco.getAttribute('id');
+                var blocoId = bloco.getAttribute('id');
                 console.log('id do bloco: '+blocoId)
 
                 var posicaoBloco = document.getElementById(blocoId);
@@ -195,11 +195,11 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
         }else if(pac<ppc){ //PINTAR PARA DIREITA
             console.log("PINTANDO PRA DIREITA")
             while(qphorizontal>0,qphorizontal--){ //pintando para cima 
-                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac+1)}"]`);
+                var bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac+1)}"]`);
                 
                 bloco.style.backgroundImage = "url('fim.png')";
 
-                const blocoId = bloco.getAttribute('id');
+                var blocoId = bloco.getAttribute('id');
                 console.log('id do bloco: '+blocoId)
 
                 var posicaoBloco = document.getElementById(blocoId);
@@ -217,11 +217,11 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
         while(qpvertical>0,qpvertical--){ 
             console.log("PINTANDO PRA BAIXO")
             
-            const bloco = document.querySelector(`.bloco[data-coluna="${(pal = pal+1)}"][data-linha="${pac}"]`);
+            var bloco = document.querySelector(`.bloco[data-coluna="${(pal = pal+1)}"][data-linha="${pac}"]`);
 
             bloco.style.backgroundImage = "url('fim.png')";
 
-            const blocoId = bloco.getAttribute('id');
+            var blocoId = bloco.getAttribute('id');
             console.log('id do bloco: '+blocoId)
 
             var posicaoBloco = document.getElementById(blocoId);
@@ -236,11 +236,11 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
         if(pac>ppc){// PINTAR PARA 
             while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA ESQUERDA")
-                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
+                var bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
                 
                 bloco.style.backgroundImage = "url('fim.png')";
 
-                const blocoId = bloco.getAttribute('id');
+                var blocoId = bloco.getAttribute('id');
                 console.log('id do bloco: '+blocoId)
 
                 var posicaoBloco = document.getElementById(blocoId);
@@ -255,11 +255,11 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
         }else if(pac<ppc){ //PINTAR PARA DIREITA
                 while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA DIREITA")
-                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
+                var bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
                 
                 bloco.style.backgroundImage = "url('fim.png')";
 
-                const blocoId = bloco.getAttribute('id');
+                var blocoId = bloco.getAttribute('id');
                 console.log('id do bloco: '+blocoId)
 
                 var posicaoBloco = document.getElementById(blocoId);
@@ -277,11 +277,11 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
         if(pac>ppc){// PINTAR PARA 
             while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA ESQUERDA")
-                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
+                var bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
                 
                 bloco.style.backgroundImage = "url('fim.png')";
 
-                const blocoId = bloco.getAttribute('id');
+                var blocoId = bloco.getAttribute('id');
                 console.log('id do bloco: '+blocoId)
 
                 var posicaoBloco = document.getElementById(blocoId);
@@ -296,12 +296,12 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
         }else if(pac<ppc){ //PINTAR PARA DIREITA
                 while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA DIREITA")
-                const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
+                var bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
                 
                 bloco.style.backgroundImage = "url('fim.png')";
             
 
-                const blocoId = bloco.getAttribute('id');
+                var blocoId = bloco.getAttribute('id');
                 console.log('id do bloco: '+blocoId)
 
                 var posicaoBloco = document.getElementById(blocoId);
