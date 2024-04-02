@@ -3,14 +3,14 @@ const mapaDiv = document.getElementById('mapa');
 const cidades = {}; // Objeto para armazenar as coordenadas das cidades
 const distancias = {}; // Objeto para armazenar as distâncias entre as cidades
 
-// Adicionar event listener para o clique nos blocos do mapa
 for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
         const bloco = document.createElement('div');
         bloco.classList.add('bloco');
         bloco.dataset.coluna = i;
         bloco.dataset.linha = j;
-        // bloco.addEventListener('click', adicionarCidade);
+        const id = `bloco_${i}_${j}`; // Cria um ID único para cada div
+        bloco.id = id; // Atribui o ID à div
         mapaDiv.appendChild(bloco);
     }
 }
@@ -158,20 +158,57 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
             console.log("PINTANDO PRA CIMA")
 
             const bloco = document.querySelector(`.bloco[data-coluna="${(pal =pal-1)}"][data-linha="${pac}"]`);
-            bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
+            
+            bloco.style.backgroundImage = "url('fim.png')";
+
+            const blocoId = bloco.getAttribute('id');
+            console.log('id do bloco: '+blocoId)
+
+            var posicaoBloco = document.getElementById(blocoId);
+            var car = document.getElementById("carrinho")
+
+            var movimento = posicaoBloco.getBoundingClientRect();
+
+            car.style.top = movimento.top + 'px';
+            car.style.left = movimento.left + 'px';
+
         }
         if(pac>ppc){// PINTAR PARA ESQUERDA
             console.log("PINTANDO PRA ESQUERDA")
             while(qphorizontal>0,qphorizontal--){ //pintando para esquerda
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac-1)}"]`);
-                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
+               
+                bloco.style.backgroundImage = "url('fim.png')";
+
+                const blocoId = bloco.getAttribute('id');
+                console.log('id do bloco: '+blocoId)
+
+                var posicaoBloco = document.getElementById(blocoId);
+                var car = document.getElementById("carrinho")
+
+                var movimento = posicaoBloco.getBoundingClientRect();
+
+                car.style.top = movimento.top + 'px';
+                car.style.left = movimento.left + 'px';
 
             }
         }else if(pac<ppc){ //PINTAR PARA DIREITA
             console.log("PINTANDO PRA DIREITA")
             while(qphorizontal>0,qphorizontal--){ //pintando para cima 
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac = pac+1)}"]`);
-                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
+                
+                bloco.style.backgroundImage = "url('fim.png')";
+
+                const blocoId = bloco.getAttribute('id');
+                console.log('id do bloco: '+blocoId)
+
+                var posicaoBloco = document.getElementById(blocoId);
+                var car = document.getElementById("carrinho")
+
+                var movimento = posicaoBloco.getBoundingClientRect();
+
+                car.style.top = movimento.top + 'px';
+                car.style.left = movimento.left + 'px';
             }
         }
 
@@ -181,19 +218,58 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
             console.log("PINTANDO PRA BAIXO")
             
             const bloco = document.querySelector(`.bloco[data-coluna="${(pal = pal+1)}"][data-linha="${pac}"]`);
-            bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
+
+            bloco.style.backgroundImage = "url('fim.png')";
+
+            const blocoId = bloco.getAttribute('id');
+            console.log('id do bloco: '+blocoId)
+
+            var posicaoBloco = document.getElementById(blocoId);
+            var car = document.getElementById("carrinho")
+
+            var movimento = posicaoBloco.getBoundingClientRect();
+
+            car.style.top = movimento.top + 'px';
+            car.style.left = movimento.left + 'px';
+
         }
         if(pac>ppc){// PINTAR PARA 
             while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA ESQUERDA")
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
-                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
+                
+                bloco.style.backgroundImage = "url('fim.png')";
+
+                const blocoId = bloco.getAttribute('id');
+                console.log('id do bloco: '+blocoId)
+
+                var posicaoBloco = document.getElementById(blocoId);
+                var car = document.getElementById("carrinho")
+
+                var movimento = posicaoBloco.getBoundingClientRect();
+
+                car.style.top = movimento.top + 'px';
+                car.style.left = movimento.left + 'px';
+                
                         }
         }else if(pac<ppc){ //PINTAR PARA DIREITA
                 while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA DIREITA")
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
-                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
+                
+                bloco.style.backgroundImage = "url('fim.png')";
+
+                const blocoId = bloco.getAttribute('id');
+                console.log('id do bloco: '+blocoId)
+
+                var posicaoBloco = document.getElementById(blocoId);
+                var car = document.getElementById("carrinho")
+
+                var movimento = posicaoBloco.getBoundingClientRect();
+
+                car.style.top = movimento.top + 'px';
+                car.style.left = movimento.left + 'px';
+
                 }
         }
     }else{
@@ -202,18 +278,45 @@ function pintarRota(a,p){ //calcula os blocos que vai percorrer para ir de uma c
             while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA ESQUERDA")
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac =pac-1)}"]`);
-                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
+                
+                bloco.style.backgroundImage = "url('fim.png')";
+
+                const blocoId = bloco.getAttribute('id');
+                console.log('id do bloco: '+blocoId)
+
+                var posicaoBloco = document.getElementById(blocoId);
+                var car = document.getElementById("carrinho")
+
+                var movimento = posicaoBloco.getBoundingClientRect();
+
+                car.style.top = movimento.top + 'px';
+                car.style.left = movimento.left + 'px';
+
                         }
         }else if(pac<ppc){ //PINTAR PARA DIREITA
                 while(qphorizontal>0,qphorizontal--){ 
                 console.log("PINTANDO PRA DIREITA")
                 const bloco = document.querySelector(`.bloco[data-coluna="${pal}"][data-linha="${(pac=pac+1)}"]`);
-                bloco.style.backgroundImage = "url('car.png')"; // Define a cor de fundo como azul
-                }
+                
+                bloco.style.backgroundImage = "url('fim.png')";
+            
+
+                const blocoId = bloco.getAttribute('id');
+                console.log('id do bloco: '+blocoId)
+
+                var posicaoBloco = document.getElementById(blocoId);
+                var car = document.getElementById("carrinho")
+
+                var movimento = posicaoBloco.getBoundingClientRect();
+
+                car.style.top = movimento.top + 'px';
+                car.style.left = movimento.left + 'px';            
+            }
 
     }
 }
 }
+
 
 function limparCores() {
     const blocos = document.querySelectorAll('.bloco');
@@ -249,12 +352,17 @@ document.getElementById('cidadeOrigemInput').addEventListener('input', function 
         const carrinho = document.getElementById('carrinho'); // Obtendo o elemento do carro
         console.log("Largura:", mapaDiv.offsetWidth, "Altura:", mapaDiv.offsetHeight);
         console.log(mapaDiv)
-        // Calculando as coordenadas x e y do carro com um pequeno deslocamento para o centro do bloco
-        const x = posicaoOrigem.coluna * larguraDoBloco + (larguraDoBloco / 2) - (carrinho.offsetWidth / 2);
-        const y = posicaoOrigem.linha * alturaDoBloco + (alturaDoBloco / 2) - (carrinho.offsetHeight / 2);
+       
+        // id="bloco07" de cada bloco  --> posicaoOrigem {coluna: 7, linha: 1}
 
-        // Atualizando a posição do carro
-        carrinho.style.left = x + 'px';
-        carrinho.style.top = y + 'px';
+        //console.log('bloco'+'_'+posicaoOrigem.coluna+'_'+posicaoOrigem.linha)
+
+        var originalDiv = document.getElementById('bloco'+'_'+posicaoOrigem.coluna+'_'+posicaoOrigem.linha);
+        var overlayDiv = document.getElementById('carrinho');
+
+        var rect = originalDiv.getBoundingClientRect();
+
+        overlayDiv.style.top = rect.top + 'px';
+        overlayDiv.style.left = rect.left + 'px';
     }
 });
